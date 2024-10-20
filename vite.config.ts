@@ -5,5 +5,14 @@ export default defineConfig({
 	plugins: [sveltekit()],
 	test: {
 		include: ['src/**/*.{test,spec}.{js,ts}']
+	},
+	build: {
+		watch: {
+			chokidar: {
+				usePolling: true,
+				interval: 2000,
+				useFsEvents: true
+			}
+		}
 	}
 });
